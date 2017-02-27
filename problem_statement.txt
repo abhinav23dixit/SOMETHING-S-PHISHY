@@ -1,0 +1,115 @@
+	Problem - Something's Phishy 
+
+In todays world where almost all user data is online, phishing has become a major menace. We want to classify websites as phishing websites based on some attributes.
+
+Numbers against the attributes show the possible categories for that attribute. The descriptions for the features have been given only to ful ll your curiosity.
+
+<	FeatureName  SetofPossibleV alues >  [Description(ifNecessary)] 
+
+Has an IP Address in URL f 1; 1g 
+
+URL length f1; 0;  1g 
+
+1 - Short length URL (len < 54); 0 - Medium length URL (54 < len < 75); -1 - Long length URL (len > 74). 
+
+URL Shortening Service Used f1;  1g 
+
+URL Shortening services (like TinyURL) are used sometimes to redirect to phishing websites. 
+
+Having @ Symbol f1;  1g 
+
+Using '@' symbol in the URL leads the browser to ignore everything preceding it, and thus can be used for phishing. 
+
+Uses Redirection f 1; 1g 
+
+The '//' symbol can be used in a URL path to redirected to another website, and thus can be used for phishing. 
+
+Has Pre x/Su  x f 1; 1g 
+
+Phishers tend to add pre xes or su xes using the dash( ) symbol, which is rarely used in legitimate URLs. 
+
+Having Sub-Domain f 1; 0; 1g 
+
+1 - Having no sub domain; 0 - Having one sub domain; -1 - Having multiple sub domian. 
+
+Uses HTTPS f 1; 1; 0g 
+
+1 - uses https with trusted certi cate; 0 - uses https with untrusted certi cate; -1 - Otherwise. 
+
+Domain Registration Length f 1; 1g 
+
+-1 - Domain expires in one year; 1 - Otherwise. 
+
+Has Favicon f1;  1g 
+
+-1 - Favicon Loaded From External Domain; 1 - Otherwise. 
+
+Uses other Ports f1;  1g 
+
+Uses HTTPS Token f 1; 1g 
+
+The phishers may add the "HTTPS" token to the domain part of a URL in order to trick users. 
+
+Requests other URL f1;  1g 
+
+1 - % of external requests < 22%; 0 - 22% < % of external requests < 61%); -1 - Otherwise. 
+ 
+
+
+4
+ 
+URL of Anchor f 1; 0; 1g 
+
+1 - % of URL Of Anchor < 31%; 0 - 31% < % of URL Of Anchor < 67%); -1 - Otherwise. 
+
+Links used in tags f1;  1; 0g 
+
+1 - % of Links in meta, script and link tags < 17%; 0 - 17% < % of Links in meta, script and link tags < 84%); -1 - Otherwise. 
+
+SFH f 1; 1; 0g 
+
+-1 - SFH is "about: blank" ; 0 - SFH "refers to" A Di erent Domain;1 - Otherwise . 
+
+Submitting something to Email f 1; 1g Abnormality in URL f 1; 1g 
+
+Website Forwarding f0; 1g 
+
+1 - Redirected pages < 1; 0 - 2 < Redirected pages < 4%); -1 - Otherwise. 
+
+Performs actions on Mouseover event f1; 1g Tampers with context menu f1; 1g 
+
+Has popup window f1;  1g 
+
+Legitimate websites hardly have pop-ups in them. 
+
+Uses Iframe f1;  1g 
+
+Phishers can make use of the "iframe" tag to display an additional webpage into one that is currently shown. 
+
+Age of Domain f 1; 1g 
+
+-1 - website life < 6months; 1 - Otherwise 
+
+DNS Record Present f 1; 1g Most Phishing websites do not have a DNS record. 
+
+Amount of Web Tra  c f 1; 0; 1g 
+
+-1 - If domain has no tra c and no record in Alexa Database; 1 - Ranked among the top 100,000 websites; 0 - Otherwise. 
+
+Page Rank f 1; 1g 
+
+PageRank is a value ranging from "0" to "1", which aims to measure how important a webpage is on the Internet. The greater the PageRank value the more important the webpage. In our datasets, most phishing webpages have no PageRank. 
+
+Google Index found f1;  1g 
+
+This feature examines whether a website is in Googles index or not. 
+
+Pages linked to this page f1; 0;  1g 
+
+1 - More than 2 external links pointing to the webpage ; -1 - No external links pointing to webpage ; 0 - Otherwise. 
+
+Statistical Report Present f 1; 1g 
+
+Whether this is a phishing site or not f 1; 1g (Expected as Output ) 
+
+Based on this information, train a classi er to judge whether a given site is a phishing website or not.
